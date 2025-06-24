@@ -1,0 +1,59 @@
+name: copy_asset_example
+description: Example app demonstrating copy_asset package usage
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  copy_asset:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    # Static assets - not managed by asset_copy plugin
+    - assets/images/logo.png
+    
+    # Dynamic assets - managed by asset_copy plugin with transformations
+    # Uses default destination (same as path)
+    - path: assets/icons/app_icon.png
+      transformer: 
+        type: image_resize
+        variants:
+          - suffix: ""
+            width: 48
+            height: 48
+          - suffix: "@2x"
+            width: 96
+            height: 96
+          - suffix: "@3x"
+            width: 144
+            height: 144
+    
+    # Asset with custom destination - copies config.json to Android manifest location
+    - path: assets/data/config.json
+      destination: android/app/src/main/AndroidManifest.xml
+      transformer:
+        type: copy
+    
+    # Another example with custom destination for image
+    - path: assets/icons/app_icon.png
+      destination: assets/icons/icon.png
+      transformer:
+        type: image_resize
+        variants:
+          - suffix: "_small"
+            width: 24
+            height: 24
+          - suffix: "_medium"
+            width: 48
+            height: 48

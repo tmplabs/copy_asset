@@ -1,0 +1,9 @@
+{
+  "app_name": "Asset Copy Example",
+  "version": "1.0.0",
+  "api_url": "https://api.example.com",
+  "features": {
+    "dark_mode": true,
+    "analytics": false
+  }
+}
