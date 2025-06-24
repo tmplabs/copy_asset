@@ -1,0 +1,23 @@
+name: copy_asset
+description: A Flutter package that copies and transforms assets from a config directory with support for image resizing and custom destinations.
+version: 1.0.0
+repository: https://github.com/tmplabs/copy_asset
+issue_tracker: https://github.com/tmplabs/copy_asset/issues
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path: ^1.8.2
+  yaml: ^3.1.1
+  image: ^4.0.17
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
